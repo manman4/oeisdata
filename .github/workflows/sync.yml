@@ -1,0 +1,32 @@
+name: Merge upstream branches
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # JST 17:00 に相当 (UTC 08:00)
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # push 権限を保証
+          lfs: false                          # LFS オブジェクトは取得しない
+      - name: Merge upstream
+        env:
+          REPO_FORK: https://github.com/oeis/oeisdata.git
+        run: |
+          : # rebase をデフォルトに設定
+          git config --global pull.rebase merges
+
+          : # 過去のコミットを全取得（重要）
+          git pull --unshallow
+
+          : # フォーク元を upstream として追加
+          git remote add upstream ${REPO_FORK}
+          git fetch upstream
+          
+          : # main ブランチに upstream/main をマージ
+          git checkout main
+          git merge --no-edit upstream/main
+          git push origin main
