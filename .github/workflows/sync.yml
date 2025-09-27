@@ -3,6 +3,7 @@ name: Merge upstream branches
 on:
   schedule:
     - cron: '0 8 * * *'   # JST 17:00 に相当 (UTC 08:00)
+  workflow_dispatch:       # 手動実行を許可
 
 jobs:
   merge:
