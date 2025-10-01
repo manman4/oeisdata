@@ -1,0 +1,67 @@
+name: Auto Merge from Upstream
+
+on:
+  workflow_dispatch:   # 手動実行
+  schedule:
+    - cron: '25 7 * * *' # UTC 07:25 = 日本時間 16:25
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. リポジトリを checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: false
+
+      # 2. LFS 無効化
+      - name: Disable LFS
+        run: |
+          git lfs uninstall --local || true
+          git config --global filter.lfs.smudge "cat"
+          git config --global filter.lfs.process "cat"
+          git config --global filter.lfs.required false
+          # .gitattributes に残っている LFS 設定を削除
+          if [ -f .gitattributes ]; then
+            grep -v filter=lfs .gitattributes > .gitattributes.tmp || true
+            mv .gitattributes.tmp .gitattributes
+            git add .gitattributes
+            git commit -m "Remove LFS attributes" || true
+          fi
+
+      # 3. git 設定
+      - name: Setup git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 4. upstream を追加して最新を fetch
+      - name: Add upstream
+        run: |
+          git remote add upstream https://github.com/oeis/oeisdata.git
+          git fetch upstream main
+
+      # 5. main をリセットしてクリーンに
+      - name: Reset main to origin
+        run: |
+          git checkout main
+          git reset --hard origin/main
+          git clean -fd
+
+      # 6. upstream をマージ
+      - name: Merge upstream/main into main
+        run: |
+          git merge upstream/main --no-edit || echo "Nothing to merge"
+
+      # 7. origin/main と同期（念のため）
+      - name: Update from origin/main
+        run: |
+          git fetch origin main
+          git merge origin/main --no-edit || true
+
+      # 8. push
+      - name: Push changes
+        run: |
+          git push origin main
