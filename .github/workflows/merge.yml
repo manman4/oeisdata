@@ -3,7 +3,7 @@ name: Auto Merge from Upstream
 on:
   workflow_dispatch:   # 手動実行
   schedule:
-    - cron: '25 7 * * *' # UTC 07:25 = 日本時間 16:25
+    - cron: '15 8 * * *' # UTC 08:15 = 日本時間 17:15
 
 jobs:
   merge:
