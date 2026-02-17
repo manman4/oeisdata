@@ -8,6 +8,8 @@ on:
 jobs:
   merge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       # 1. リポジトリを checkout
       - name: Checkout repository
@@ -16,20 +18,13 @@ jobs:
           fetch-depth: 0
           lfs: false
 
-      # 2. LFS 無効化
+      # 2. LFS 無効化（git config のみ。.gitattributes はマージ後に対処）
       - name: Disable LFS
         run: |
           git lfs uninstall --local || true
           git config --global filter.lfs.smudge "cat"
           git config --global filter.lfs.process "cat"
           git config --global filter.lfs.required false
-          # .gitattributes に残っている LFS 設定を削除
-          if [ -f .gitattributes ]; then
-            grep -v filter=lfs .gitattributes > .gitattributes.tmp || true
-            mv .gitattributes.tmp .gitattributes
-            git add .gitattributes
-            git commit -m "Remove LFS attributes" || true
-          fi
 
       # 3. git 設定
       - name: Setup git
@@ -53,13 +48,20 @@ jobs:
       # 6. upstream をマージ
       - name: Merge upstream/main into main
         run: |
-          git merge upstream/main --no-edit || echo "Nothing to merge"
+          git merge upstream/main --no-edit || {
+            echo "Merge failed (conflict?)"
+            exit 1
+          }
 
-      # 7. origin/main と同期（念のため）
-      - name: Update from origin/main
+      # 7. マージ後に .gitattributes の LFS 設定を除去してコミット
+      - name: Remove LFS attributes after merge
         run: |
-          git fetch origin main
-          git merge origin/main --no-edit || true
+          if [ -f .gitattributes ]; then
+            grep -v filter=lfs .gitattributes > .gitattributes.tmp || true
+            mv .gitattributes.tmp .gitattributes
+            git add .gitattributes
+            git commit -m "Remove LFS attributes" || true
+          fi
 
       # 8. push
       - name: Push changes
