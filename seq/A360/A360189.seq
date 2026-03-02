@@ -1,4 +1,4 @@
-%I A360189 #74 Dec 12 2024 23:21:03
+%I A360189 #79 Mar 01 2026 13:44:42
 %S A360189 1,1,1,1,2,1,2,1,1,3,1,1,3,2,1,3,3,1,3,3,1,1,4,3,1,1,4,4,1,1,4,5,1,1,
 %T A360189 4,5,2,1,4,6,2,1,4,6,3,1,4,6,4,1,4,6,4,1,1,5,6,4,1,1,5,7,4,1,1,5,8,4,
 %U A360189 1,1,5,8,5,1,1,5,9,5,1,1,5,9,6,1,1,5,9,7,1
@@ -50,10 +50,11 @@
 %p A360189     end:
 %p A360189 T:= n-> (p-> seq(coeff(p, x, i), i=0..degree(p)))(b(n)):
 %p A360189 seq(T(n), n=0..23);
-%o A360189 (PARI) T(n,k) = my(v1); v1 = Vecrev(binary(n+1)); v1 = Vecrev(select(x->(x>0),v1,1)); sum(j=0, min(k,#v1-1), binomial(v1[j+1]-1,k-j)) \\ _Mikhail Kurkov_, Nov 27 2024
+%o A360189 (PARI) T(n,k) = my(v = Vecrev(binary(n+1))); v = Vecrev(select(x->(x>0),v,1)); sum(j=0, min(k,#v-1), binomial(v[j+1]-1,k-j));
+%o A360189 row(n) = vector(logint(n+1,2)+1, k, T(n,k-1)); \\ _Mikhail Kurkov_, Nov 27 2024
 %Y A360189 Columns k=0-2 give: A000012, A029837(n+1) = A113473(n) for n>0, A340068(n+1).
 %Y A360189 Last elements of rows give A090996(n+1).
 %Y A360189 Cf. A000027, A000120, A000225, A000788, A006046, A007318, A116520, A116522, A116525, A116526, A130665, A130667, A161342, A231500, A231501, A231502, A272020, A361257.
-%K A360189 nonn,look,tabf,base
+%K A360189 nonn,look,tabf,base,changed
 %O A360189 0,5
 %A A360189 _Alois P. Heinz_, Mar 04 2023

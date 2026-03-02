@@ -4,7 +4,7 @@
 %C A099433 If A066421(36090) > 0, then it is > 159 and 36090 is the next term in the sequence.
 %C A099433 A066421(36090) = 291. A066421(114913) = 292. - _Donovan Johnson_, Nov 22 2008
 %Y A099433 Cf. A066421, A099434.
-%K A099433 more,nonn,changed
+%K A099433 more,nonn
 %O A099433 1,2
 %A A099433 Gabriel Cunningham (gcasey(AT)mit.edu), Oct 15 2004
 %E A099433 a(10)-a(11) from _Donovan Johnson_, Nov 22 2008

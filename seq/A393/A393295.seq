@@ -9,6 +9,6 @@
 %e A393295 a(1) = 2 because the only transitive relations with 3 ordered pairs on a 1-element {x} set with at most three ordered pairs are { } and {(x,x)}.
 %t A393295 a[n_] := Total[{1, 1, 9, 49, 128, 180, 120} * Binomial[n, Range[0, 6]]]; Array[a, 33, 0] (* _Amiram Eldar_, Feb 10 2026 *)
 %Y A393295 Cf. A349919, A393238.
-%K A393295 nonn,easy,new
+%K A393295 nonn,easy
 %O A393295 0,2
 %A A393295 _Firdous Ahmad Mala_, Feb 10 2026

@@ -1,4 +1,4 @@
-%I A393327 #25 Feb 23 2026 08:53:04
+%I A393327 #29 Mar 01 2026 07:39:54
 %S A393327 0,10,30,63,112,180,270,385,528,702,910,1155,1440,1768,2142,2565,3040,
 %T A393327 3570,4158,4807,5520,6300,7150,8073,9072,10150,11310,12555,13888,
 %U A393327 15312,16830,18445,20160,21978,23902,25935,28080,30340,32718,35217,37840,40590,43470,46483,49632,52920,56350
@@ -13,6 +13,9 @@
 %F A393327 a(n) - a(n-1) = A140229(n+2), n >= 1.
 %F A393327 G.f.: x*(10 - 10*x + 3*x^2)/(1-x)^4.
 %F A393327 E.g.f.: exp(x)*x*(20 + 10*x + x^2)/2. - _Stefano Spezia_, Feb 12 2026
+%F A393327 From _Amiram Eldar_, Mar 01 2026: (Start)
+%F A393327 Sum_{n>=1} 1/a(n) = 13/72.
+%F A393327 Sum_{n>=1} (-1)^(n+1)/a(n) = 4*log(2)/3 - 61/72. (End)
 %e A393327 For n=1, a(1)*binomial(3,2) = 10*3 is the number of strings of length 5 described in the comment since there are 30 permutations of the string 00112.
 %e A393327 For n=4, a(4)*binomial(6,2) = 112*15 is the number of strings of length 8 since there are 1680 permutations of the string 00112333.
 %t A393327 A393327[n_] := n*(n+3)*(n+4)/2; Array[A393327, 50, 0] (* or *)

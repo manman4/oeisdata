@@ -1,10 +1,10 @@
-%I A275548 #36 Jun 02 2018 14:19:39
+%I A275548 #39 Mar 01 2026 19:56:09
 %S A275548 1,1,2,3,6,9,16,25,43,68,113,181,298,479,781,1260,2048,3308,5364,8672,
 %T A275548 14048,22720,36782,59502,96305,155807,252136,407943,660113,1068056,
 %U A275548 1728210,2796266,4524531,7320797,11845394,19166191,31011673,50177864,81189642,131367506
 %N A275548 Number of compositions of n if only the order of the odd numbers matter.
 %C A275548 The number of partitions of n = 2k with only even numbers is p(k) = A000041(k). The number of compositions of n with only odd numbers is F(n) = the n-th Fibonacci number = A000045(n). Enumerating a(n) is therefore a sum of products of partition numbers and Fibonacci numbers.
-%H A275548 Alois P. Heinz, <a href="/A275548/b275548.txt">Table of n, a(n) for n = 0..1000</a>
+%H A275548 Alois P. Heinz, <a href="/A275548/b275548.txt">Table of n, a(n) for n = 0..1500</a>
 %F A275548 a(2k+1) = Sum_{j=0..k} p(j)*F(2k + 1 - 2j), where  p(j) = A000041(j), the number of partitions of j, and F(j) = A000045(j), the j-th Fibonacci number.
 %F A275548 a(2k) = p(k) + Sum_{j=0..(k-1)} p(j)*F(2k - 2j).
 %F A275548 a(2k+1) = a(2k) + a(2k-1).
@@ -24,6 +24,6 @@
 %t A275548 Table[a[n], {n, 0, 50}] (* _Jean-François Alcover_, May 21 2018, after _Alois P. Heinz_ *)
 %t A275548 nmax = 40; CoefficientList[Series[1/(1 - x - x^2) * Product[1/(1 - x^(2*k)), {k, 2, nmax}], {x, 0, nmax}], x] (* _Vaclav Kotesovec_, Jun 02 2018 *)
 %Y A275548 Cf. A000041, A000045, A275592.
-%K A275548 nonn
+%K A275548 nonn,changed
 %O A275548 0,3
 %A A275548 _Gregory L. Simay_, Aug 01 2016

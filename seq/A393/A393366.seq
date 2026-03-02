@@ -1,0 +1,22 @@
+%I A393366 #5 Mar 01 2026 21:16:10
+%S A393366 1,5,7,0,6,7,3,2,0,3,2,2,8,5,6,6,4,3,9,1,6,3,1,1,5,6,3,5,0,8,3,7,8,2,
+%T A393366 6,8,9,1,2,3,1,4,6,5,0,0,3,5,7,0,7,7,3,3,3,0,4,8,8,5,8,9,8,2,1,2,8,0,
+%U A393366 6,9,1,8,6,6,5,3,0,7,4,5,3,1,2,0,4,6,8,1
+%N A393366 Decimal expansion of the weight factor for Hermite-Gauss quadrature of degree 6 corresponding to abscissa A393363.
+%C A393366 There are floor(k/2) positive zeros of the Hermite polynomial of degree k:
+%C A393366    k | zeros                     | corresponding weights for Hermite-Gauss quadrature
+%C A393366   ---+---------------------------+----------------------------------------------------
+%C A393366    2 | A010503                   | A019704
+%C A393366    3 | 0, A115754                | 10*A019717, A019708
+%C A393366    4 | A393353, A393354          | A393355, A393356
+%C A393366    5 | 0, A393357, A393358       | A245887, A393360, A393361
+%C A393366    6 | A393362, A393363, A393364 | A393365, this sequence, A393367
+%H A393366 M. Abramowitz and I. A. Stegun, eds., <a href="http://www.convertit.com/Go/ConvertIt/Reference/AMS55.ASP">Handbook of Mathematical Functions</a>, National Bureau of Standards, Applied Math. Series 55, Tenth Printing, 1972 [alternative scanned copy]. Eq. 25.4.46 p. 890 and Table 25.10 p. 924.
+%H A393366 Eric Weisstein's World of Mathematics, <a href="https://mathworld.wolfram.com/Hermite-GaussQuadrature.html">Hermite-Gauss Quadrature</a>.
+%F A393366 This constant divided by sqrt(Pi) is a root of 10800*x^3 - 5400*x^2 + 405*x - 1 = 0.
+%e A393366 0.157067320322856643916311563508378268912314650035...
+%o A393366 (PARI) sqrt(Pi)*polrootsreal(Pol([10800, -5400, 405, -1]))[2]
+%Y A393366 Cf. A393363.
+%K A393366 nonn,cons,new
+%O A393366 0,2
+%A A393366 _A.H.M. Smeets_, Feb 24 2026

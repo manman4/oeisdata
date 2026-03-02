@@ -10,6 +10,6 @@
 %F A048147 E.g.f.: exp(x+y)*(x + x^2 + y + y^2). (End)
 %e A048147 Diagonals (each starting on row 1): {0}; {1,1}; {4,2,4}; ...
 %Y A048147 Cf. A006331.
-%K A048147 nonn,tabl,changed
+%K A048147 nonn,tabl
 %O A048147 0,4
 %A A048147 _Clark Kimberling_

@@ -1,6 +1,7 @@
-%I A267798 #26 Apr 12 2016 15:56:00
+%I A267798 #29 Mar 01 2026 19:04:46
 %S A267798 7,79,4373,885623,146447621,309763486247,151536553447871
 %N A267798 a(n) is the smallest prime p such that none of p + 1, p + 2,... p + n are cubefree.
+%C A267798 a(8) <= 194992850209540367. - _Robert Israel_, Mar 01 2026
 %e A267798 a(1) = 7 because 7 is prime and none of 7 + 1 = 8 = (2*2*2) is cubefree.
 %e A267798 a(2) = 79 because 79 is prime and none of 79 + 1 = 80 = (2*2*2)*10, 79 + 2 = 81 = (3*3*3)*3 are cubefree.
 %e A267798 a(3) = 4373 because 4373 is prime and none of 4373 + 1 = 4374 = (3*3*3)*162, 4373 + 2 = 4375 = (5*5*5)*35, 4373 + 3 = 4376 = (2*2*2)*547 are cubefree.
@@ -9,7 +10,7 @@
 %o A267798 (PARI) isokp(p, n)=for (k=1, n, if (vecmax(factor(p+k)[,2]) < 3, return (0));); 1;
 %o A267798 a(n) = forprime(p=7,, if (isokp(p, n), return(p))) \\ _Michel Marcus_, Apr 07 2016
 %Y A267798 Cf. A046099, A271395.
-%K A267798 nonn,more
+%K A267798 nonn,more,changed
 %O A267798 1,1
 %A A267798 _Juri-Stepan Gerasimov_, Apr 07 2016
 %E A267798 a(5) from _Michel Marcus_, Apr 07 2016

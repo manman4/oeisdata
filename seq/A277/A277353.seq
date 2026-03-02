@@ -9,6 +9,6 @@
 %o A277353 from math import prod
 %o A277353 def A277353(n): return prod(3*k**2+1 for k in range(1,n+1)) # _Aidan Chen_, Feb 13 2026
 %Y A277353 Cf. A101686, A277352, A277354.
-%K A277353 nonn,changed
+%K A277353 nonn
 %O A277353 0,2
 %A A277353 _Vaclav Kotesovec_, Oct 10 2016

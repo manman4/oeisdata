@@ -11,6 +11,6 @@
 %o A393303 (PARI) c(n) = (-1)^(n+1) * (16^n-4^n) * bernfrac(2*n)/(2*n)!;
 %o A393303 a(n) = denominator(sum(k = 1, (n+1)\2, binomial(n, 2*k-2) * c(k)));
 %Y A393303 Cf. A002430, A036279, A393302 (numerators).
-%K A393303 nonn,easy,frac,new
+%K A393303 nonn,easy,frac
 %O A393303 1,7
 %A A393303 _Amiram Eldar_, Feb 10 2026

@@ -14,6 +14,6 @@
 %t A083224 LinearRecurrence[{0,49},{1,5},30] (* _Harvey P. Dale_, Oct 12 2018 *)
 %o A083224 (Magma) [(6*7^n+(-7)^n)/7: n in [0..25]]; // _Vincenzo Librandi_, Jun 29 2011
 %Y A083224 Cf. A083223, A083225.
-%K A083224 easy,nonn,changed
+%K A083224 easy,nonn
 %O A083224 0,2
 %A A083224 _Paul Barry_, Apr 23 2003

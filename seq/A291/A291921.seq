@@ -1,12 +1,24 @@
-%I A291921 #12 Feb 16 2025 08:33:51
+%I A291921 #16 Mar 01 2026 19:05:18
 %S A291921 240,287,340,371,510,660,803,864,931,961,990,1012,1060,1099,1104,1151,
 %T A291921 1236,1313,1367,1392,1524,1643,1710,1788,1793,1951,1956,2040,2303,
 %U A291921 2304,2387,2393,2436,2507,2556,2586,2647,2670,2689,2706,2886,3010,3166,3232,3263
 %N A291921 Numbers that are the sum of (at least two) consecutive primes in exactly three ways.
+%H A291921 Robert Israel, <a href="/A291921/b291921.txt">Table of n, a(n) for n = 1..10000</a>
 %H A291921 Eric Weisstein's World of Mathematics, <a href="https://mathworld.wolfram.com/PrimeSums.html">Prime Sums</a>
 %e A291921 240 is in the sequence because it can be written in exactly three ways as a sum of consecutive primes: 113 + 127, 53 + 59 + 61 + 67, and 17 + 19 + 23 + 29 + 31 + 37 + 41 + 43.
+%p A291921 P:= [seq(ithprime(i),i=1..1000)]: nP:= nops(P):
+%p A291921 PS:= ListTools:-PartialSums([0,op(P)]):
+%p A291921 N:= P[-1]+P[-2]:
+%p A291921 V:= Vector(N):
+%p A291921 for i from 1 to nP do
+%p A291921   for j from i+2 to nP do
+%p A291921     v:= PS[j]-PS[i];
+%p A291921     if v > N then break fi;
+%p A291921     V[v]:= V[v]+1;
+%p A291921 od od:
+%p A291921 select(i -> V[i]=3, [$1..N]); # _Robert Israel_, Mar 01 2026
 %o A291921 (Magma) lst1:=[]; lst3:=[]; r:=3263; s:=PrimesUpTo(Floor(r-r/3)); t:=#s; y:=0; w:=0; z:=1; while y le r do y+:=NthPrime(z); w+:=1; z+:=1; end while; for q in [1..NthPrime(w-1)] do for a in [1..t-q] do c:=&+[s[b]: b in [a..a+q]]; if c gt r then break; else Append(~lst1, c); end if; end for; end for; lst2:=Sort(lst1); x:=#lst2; for n in [1..r] do d:=Position(lst2, n); if d ge 1 and d+2 le x then e:=[lst2[f]: f in [d..d+2]]; if Min(e) eq Max(e) then if d+3 gt x then Append(~lst3, n); else if not lst2[d+3] eq n then Append(~lst3, n); end if; end if; end if; end if; end for; lst3;
 %Y A291921 Cf. A054998, A067373.
-%K A291921 nonn
+%K A291921 nonn,changed
 %O A291921 1,1
 %A A291921 _Arkadiusz Wesolowski_, Sep 05 2017

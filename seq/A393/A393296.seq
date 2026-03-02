@@ -23,7 +23,7 @@
 %o A393296         l = l2
 %o A393296 print(list(islice(a_gen(), 20)))
 %Y A393296 Cf. A000041, A116473, A119262 (conjectured number of lower sets in the Young-Fibonacci lattice).
-%K A393296 nonn,more,new
+%K A393296 nonn,more
 %O A393296 0,4
 %A A393296 _Ludovic Schwob_, Feb 10 2026
 %E A393296 a(36)-a(41) from _Sean A. Irvine_, Feb 15 2026

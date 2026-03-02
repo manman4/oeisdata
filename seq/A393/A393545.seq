@@ -1,0 +1,29 @@
+%I A393545 #6 Mar 01 2026 14:48:40
+%S A393545 0,0,0,0,0,0,15,81,220,584,1107,2371,3818,7098,10558,17830,24266,
+%T A393545 40106,50751,79492,100409,146533,176407,266218,302583,429317,506663,
+%U A393545 696460,774962
+%N A393545 a(n) is the number of four-element sets of distinct integer-sided trapezoids whose base angles are 60 degrees of total area n^2 but which cannot fill an equilateral triangular grid of side n units.
+%C A393545 These sets consist distinct integer-sided trapezoids formed within the equilateral triangular grid of side n units such that the total area is n^2.
+%C A393545 A trapezoid whose base angles are 60 degrees with larger base b and legs s is denoted by {b X s} here.
+%H A393545 Janaka Rodrigo, <a href="/A393545/a393545.txt">Python Code for 4-Trapezoid sets of total area n^2</a>
+%e A393545 Sequence has 15 sets for n = 15:
+%e A393545  {(2 X 1), (4 X 1), (4 X 3), (5 X 4)},
+%e A393545  {(2 X 1), (5 X 1), (7 X 1), (7 X 2)},
+%e A393545  {(2 X 1), (5 X 1), (5 X 2), (5 X 3)},
+%e A393545  {(2 X 1), (4 X 2), (7 X 1), (5 X 3)},
+%e A393545  {(3 X 1), (4 X 1), (7 X 1), (7 X 2)},
+%e A393545  {(3 X 1), (4 X 1), (7 X 1), (5 X 4)},
+%e A393545  {(3 X 1), (3 X 2), (4 X 2), (5 X 4)},
+%e A393545  {(3 X 1), (3 X 2), (4 X 3), (5 X 3)},
+%e A393545  {(3 X 1), (5 X 1), (6 X 1), (7 X 2)},
+%e A393545  {(3 X 1), (6 X 1), (4 X 2), (5 X 3)},
+%e A393545  {(3 X 1), (6 X 1), (7 X 1), (6 X 2)},
+%e A393545  {(4 X 1), (5 X 1), (7 X 1), (6 X 2)},
+%e A393545  {(3 X 2), (4 X 2), (7 X 1), (5 X 2)},
+%e A393545  {(5 X 1), (6 X 1), (7 X 1), (5 X 2)},
+%e A393545  {(5 X 1), (4 X 2), (7 X 1), (4 X 3)}.
+%e A393545 Therefore a(7) = 15.
+%Y A393545 Cf. A389392, A389518, A390523, A391498, A391499, A393432.
+%K A393545 nonn,more,new
+%O A393545 1,7
+%A A393545 _Janaka Rodrigo_, Feb 20 2026

@@ -19,6 +19,6 @@
 %t A392117 v = Last[w[s]]  (* upper Wythoff partition sequence of s *)
 %t A392117 (* _Peter J. C. Moses_, Dec 23 2025 *)
 %Y A392117 Cf. A000040, A000201, A001950, A392118, A392119, A392121.
-%K A392117 nonn,new
+%K A392117 nonn
 %O A392117 1,1
 %A A392117 _Clark Kimberling_, Jan 19 2026

@@ -11,6 +11,6 @@
 %F A091095 Sum_{n>=0} 1/a(n) = 17/15.
 %F A091095 Sum_{n>=0} (-1)^n/a(n) = 3/5. (End)
 %t A091095 LinearRecurrence[{0,16},{1,4,-8},30] (* _Harvey P. Dale_, Dec 14 2019 *)
-%K A091095 easy,sign,changed
+%K A091095 easy,sign
 %O A091095 0,2
 %A A091095 _Paul Barry_, Dec 19 2003

@@ -10,6 +10,6 @@
 %t A308296 Join[{1}, Table[1/n! * Sum[m! * SeriesCoefficient[(E^x * Gamma[n+1, x]/Gamma[n+1] - 1)^n, {x, 0, m}], {m, n, n^2}], {n, 1, 10}]] (* _Vaclav Kotesovec_, Feb 13 2026 *)
 %o A308296 (PARI) {a(n) = sum(i=n, n^2, i!*polcoef(sum(j=1, n, x^j/j!)^n, i))/n!}
 %Y A308296 Cf. A144510, A144512, A274762, A281901.
-%K A308296 nonn,changed
+%K A308296 nonn
 %O A308296 0,3
 %A A308296 _Seiichi Manyama_, May 19 2019

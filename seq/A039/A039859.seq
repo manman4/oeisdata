@@ -1,10 +1,13 @@
-%I A039859 #6 Mar 30 2012 17:20:56
-%S A039859 1,1,1,2,2,3,4,6,7,8,10,15,19,23,27,35,44,56,67,82,100,124,150,184,
+%I A039859 #12 Mar 01 2026 20:32:04
+%S A039859 1,1,1,1,2,2,3,4,6,7,8,10,15,19,23,27,35,44,56,67,82,100,124,150,184,
 %T A039859 221,268,321,388,464,558,664,792,939,1119,1326,1573,1850,2181,2567,
-%U A039859 3027,3547,4155,4853,5681,6631
-%N A039859 Number of partitions satisfying cn(0,5) = cn(2,5) + cn(3,5).
+%U A039859 3027,3547,4155,4853,5681,6631,7732,8984,10448,12128,14078,16297,18857,21779
+%N A039859 Number of partitions of n satisfying cn(0,5) = cn(2,5) + cn(3,5).
 %C A039859 For a given partition cn(i,n) means the number of its parts equal to i modulo n.
 %C A039859 Short: 0 = 2 + 3 (BBpEZ).
-%K A039859 nonn
-%O A039859 1,4
+%H A039859 Alois P. Heinz, <a href="/A039859/b039859.txt">Table of n, a(n) for n = 0..2000</a>
+%Y A039859 Cf. A039840, A039841, A039861.
+%K A039859 nonn,changed
+%O A039859 0,5
 %A A039859 _Olivier Gérard_
+%E A039859 More terms from _Alois P. Heinz_, Mar 01 2026

@@ -12,6 +12,6 @@
 %t A392620 RootSum[-2 + 3 # - 4 #^2 + #^3 &, #^Range[20] &]
 %t A392620 LinearRecurrence[{4, -3, 2}, {4, 10, 34}, 20]
 %t A392620 CoefficientList[Series[-2 (2 - 3 x + 3 x^2)/(-1 + 4 x - 3 x^2 + 2 x^3), {x, 0, 20}], x]
-%K A392620 nonn,easy,new
+%K A392620 nonn,easy
 %O A392620 1,1
 %A A392620 _Eric W. Weisstein_, Feb 15 2026

@@ -1,0 +1,13 @@
+%I A393524 #13 Mar 01 2026 15:43:45
+%S A393524 1,2,11,116,1993,50674,1788175,83631728,5007159389,373508234222,
+%T A393524 33966609134851,3699141083849692,475311338976310609,
+%U A393524 71154473463028942634,12276314165337164938775,2418205713343385071245512,539389515873083505589058725,135250325619538564330152631462
+%N A393524 Number of bicolored unordered increasing trees having n blue nodes and any number of red nodes, such that each red node has at least two children.
+%C A393524 Also the number of minimal inversion sequences for a pattern having a maximum diagonal difference of n-1 reached by its first entry (see the Testart reference).
+%H A393524 Benjamin Testart, <a href="/A393524/b393524.txt">Table of n, a(n) for n = 1..500</a>
+%H A393524 Benjamin Testart, <a href="https://arxiv.org/abs/2602.12130">On minimal pattern-containing inversion sequences</a>, arXiv:2602.12130 [math.CO], 2026. See Section 5.1.
+%e A393524 Trees are written in parenthesized form v(c1,c2,...) with children listed in increasing order of labels. Each label carries a sign: '-' indicates the color blue and '+' indicates the color red. For n = 3, the 11 trees are: 1-(2-,3-), 1-(2-(3-)), 1-(2+(3-,4-)), 1+(2-,3-,4-), 1+(2-,3-(4-)), 1+(2-(4-),3-), 1+(2-(3-),4-), 1+(2-,3+(4-,5-)), 1+(2+(4-,5-),3-), 1+(2+(3-,5-)4-), 1+(2+(3-,4-),5-).
+%Y A393524 Column sums of A393523.
+%K A393524 nonn,new
+%O A393524 1,2
+%A A393524 _Benjamin Testart_, Feb 18 2026

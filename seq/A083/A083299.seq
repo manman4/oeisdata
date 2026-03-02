@@ -12,6 +12,6 @@
 %t A083299 a[n_] := (4*6^n + (-4)^n)/5; Array[a, 25, 0] (* _Amiram Eldar_, Feb 15 2026 *)
 %o A083299 (Magma) [(4*6^n+(-4)^n)/5: n in [0..25]]; // _Vincenzo Librandi_, Jun 01 2011
 %Y A083299 Cf. A083222, A083300.
-%K A083299 easy,nonn,changed
+%K A083299 easy,nonn
 %O A083299 0,2
 %A A083299 _Paul Barry_, Apr 24 2003

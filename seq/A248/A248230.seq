@@ -16,6 +16,6 @@
 %t A248230 Flatten[Position[Differences[u], 1]]  (* A248229 *)
 %t A248230 f = Table[Floor[1/(Zeta[4] - p[n])], {n, 1, z}]  (* A248230 *)
 %Y A248230 Cf. A248227, A248228, A248229, A013662.
-%K A248230 nonn,easy,changed
+%K A248230 nonn,easy
 %O A248230 1,1
 %A A248230 _Clark Kimberling_, Oct 05 2014

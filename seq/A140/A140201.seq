@@ -21,6 +21,6 @@
 %o A140201 (Magma) I:=[0, 1, 2, 4, 4]; [n le 5 select I[n] else Self(n-1)+Self(n-4)-Self(n-5): n in [1..80]]; // _Vincenzo Librandi_, Sep 17 2012
 %o A140201 (PARI) a(n) = n + !((n+1)%4); \\ _Amiram Eldar_, Feb 15 2026
 %Y A140201 Cf. A002265, A004524, A004526, A042948, A047624, A057353, A121262.
-%K A140201 easy,nonn,changed
+%K A140201 easy,nonn
 %O A140201 0,3
 %A A140201 _Nadia Heninger_ and _N. J. A. Sloane_, Jun 09 2008

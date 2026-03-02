@@ -15,6 +15,6 @@
 %o A083227 (Magma) [(9*10^n+(-10)^n)/10: n in [0..25]]; // _Vincenzo Librandi_, Jun 29 2011
 %o A083227 (PARI) a(n)= (9*10^n+(-10)^n)/10 \\ _Charles R Greathouse IV_, Jun 29 2011
 %Y A083227 Cf. A083226.
-%K A083227 easy,nonn,changed
+%K A083227 easy,nonn
 %O A083227 0,2
 %A A083227 _Paul Barry_, Apr 23 2003

@@ -1,0 +1,8 @@
+%I A393728 #8 Mar 01 2026 11:18:51
+%S A393728 1,1,2,8,33,194,1196,8196,58129,427798,3221282,24753296,193308187
+%N A393728 Number of free polyominoes in the {5,8} tessellation of the hyperbolic plane.
+%F A393728 a(n) = P{p,q}(n) (the number of {p,q} polyominoes of size n) is equal to P{p,oo}(n) for n <= q; also P{p,q}(q+1) = P{p,oo}(q+1) + floor((p-1)/2) - floor((3+q(p-2))/2). In this case, p=5, q=8 and P{p,oo} = A005040.
+%Y A393728 Cf. A330211, A393725, A393726, A393727, A005040.
+%K A393728 nonn,more,new
+%O A393728 1,3
+%A A393728 _John Mason_, Érika Roldán, and Rosemberg Toalá-Enríquez, Feb 26 2026

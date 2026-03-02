@@ -1,9 +1,10 @@
-%I A159664 #30 Jun 12 2025 11:44:32
+%I A159664 #34 Mar 01 2026 14:25:24
 %S A159664 1,23,551,13201,316273,7577351,181540151,4349386273,104203730401,
 %T A159664 2496540143351,59812759710023,1433009692897201,34332419869822801,
 %U A159664 822545067182850023,19706749192518577751,472139435553263016001,11311639704085793806273,271007213462505788334551
 %N A159664 The general form of the recurrences are the a(j), b(j) and n(j) solutions of the 2 equations problem: 11*n(j) + 1 = a(j)*a(j) and 13*n(j) + 1 = b(j)*b(j), with positive integer numbers.
 %C A159664 Positive values of x (or y) satisfying x^2 - 24*x*y + y^2 + 22 = 0. - _Colin Barker_, Feb 19 2014
+%C A159664 Nonnegative solutions to the Diophantine equation 13*a(n)^2 - 11*A159661(n)^2 = 2. 143*a(n)^2 - 22 is a square. - _Klaus Purath_, Feb 12 2026
 %H A159664 Vincenzo Librandi, <a href="/A159664/b159664.txt">Table of n, a(n) for n = 1..200</a>
 %H A159664 <a href="/index/Rec#order_02">Index entries for linear recurrences with constant coefficients</a>, signature (24,-1).
 %F A159664 The a(j) recurrence is a(1)=1, a(2)=23, a(t+2) = 24*a(t+1) - a(t) resulting in terms 1, 23, 551, 13201, ... (this sequence).
@@ -26,7 +27,7 @@
 %o A159664 [A159664(n) for n in range(1,30)] # _G. C. Greubel_, Sep 27 2022
 %Y A159664 Cf. A077423, A157456, A159661, A159665.
 %Y A159664 Cf. similar sequences listed in A238379.
-%K A159664 nonn,easy
+%K A159664 nonn,easy,changed
 %O A159664 1,2
 %A A159664 _Paul Weisenhorn_, Apr 19 2009
 %E A159664 More terms from _Colin Barker_, Feb 19 2014
