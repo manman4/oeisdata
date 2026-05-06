@@ -3,11 +3,17 @@ name: Auto Merge from Upstream
 on:
   workflow_dispatch:   # 手動実行
   schedule:
-    - cron: '0 8 * * *' # UTC 08:00 = 日本時間 17:00
+    - cron: '30 7 * * *' # UTC 07:30 = 日本時間 16:30
+    - cron: '30 8 * * *' # UTC 08:30 = 日本時間 17:30
+
+concurrency:
+  group: merge-upstream
+  cancel-in-progress: false
 
 jobs:
   merge:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: write
     steps:
@@ -38,15 +44,27 @@ jobs:
           git remote add upstream https://github.com/oeis/oeisdata.git
           git fetch upstream main
 
+      # 4.5. 変更がなければスキップ
+      - name: Check for upstream changes
+        id: check
+        run: |
+          if git merge-base --is-ancestor upstream/main origin/main; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "No new commits from upstream. Skipping."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # 5. main をリセットしてクリーンに
       - name: Reset main to origin
+        if: steps.check.outputs.skip != 'true'
         run: |
-          git checkout main
           git reset --hard origin/main
           git clean -fd
 
       # 6. upstream をマージ
       - name: Merge upstream/main into main
+        if: steps.check.outputs.skip != 'true'
         run: |
           git merge upstream/main --no-edit || {
             echo "Merge failed (conflict?)"
@@ -55,15 +73,21 @@ jobs:
 
       # 7. マージ後に .gitattributes の LFS 設定を除去してコミット
       - name: Remove LFS attributes after merge
+        if: steps.check.outputs.skip != 'true'
         run: |
           if [ -f .gitattributes ]; then
-            grep -v filter=lfs .gitattributes > .gitattributes.tmp || true
-            mv .gitattributes.tmp .gitattributes
+            grep -v 'filter=lfs' .gitattributes > .gitattributes.tmp || true
+            if [ -s .gitattributes.tmp ]; then
+              mv .gitattributes.tmp .gitattributes
+            else
+              rm -f .gitattributes .gitattributes.tmp
+            fi
             git add .gitattributes
             git commit -m "Remove LFS attributes" || true
           fi
 
       # 8. push
       - name: Push changes
+        if: steps.check.outputs.skip != 'true'
         run: |
           git push origin main
